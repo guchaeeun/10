@@ -1,4 +1,3 @@
-/* 기본 레이아웃 */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -24,17 +23,16 @@ body {
     margin-top: 10px;
 }
 
-/* 네온 깜빡임 */
 @keyframes neon {
     from { text-shadow: 0 0 5px #7f00ff; }
     to { text-shadow: 0 0 20px #ff00ff; }
 }
 
-/* 탭 */
 .category-tabs {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 15px;
     margin-bottom: 30px;
 }
 
@@ -53,7 +51,6 @@ body {
     transform: scale(1.05);
 }
 
-/* 카드 레이아웃 */
 .songs {
     display: flex;
     justify-content: center;
@@ -66,3 +63,40 @@ body {
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(12px);
     border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(127,0,255,0.6);
+    transition: transform 0.3s;
+    width: 200px;
+    text-align: center;
+}
+
+.song-card:hover {
+    transform: scale(1.05);
+}
+
+.song-card img {
+    width: 100%;
+    display: block;
+}
+
+.song-card h3 {
+    margin: 10px 0;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0,0,0,0.5);
+}
+
+/* 반응형 */
+@media screen and (max-width: 768px) {
+    .song-card { width: 45%; }
+}
+
+@media screen and (max-width: 480px) {
+    .song-card { width: 90%; }
+    .hero h1 { font-size: 2em; }
+    .hero p { font-size: 1em; }
+    .tab-btn { padding: 8px 12px; }
+}
